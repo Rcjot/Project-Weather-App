@@ -7,5 +7,10 @@ export default [
   pluginJs.configs.recommended,
   {
     ignores: ["webpack.config.js"],
+  },
+  {
+    "env": {
+      "amd": true
+    }
   }
 ];

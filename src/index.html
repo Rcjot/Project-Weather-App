@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Weather App</h1>
+        <div id="searchDiv">
+            <label for="searchBar">Search City</label>
+            <input id="searchBar" type="text" value="london">
+            <button id="searchBtn"></button>
+        </div>
+        <div id="checkBoxWrapper">
+            <h1>°C</h1>
+            <div class="checkbox-wrapper-6">
+                <input class="tgl tgl-light" id="cb1-6" type="checkbox"/>
+                <label class="tgl-btn" for="cb1-6">
+            </div>  
+            <h1>°F</h1>  
+        </div>
+  
+        
+    </header>
+
+    <div id="display">
+        <div id="currentDiv">
+            <div id="leftDiv">
+                <div id="topDiv">
+                    <p id="currentTemp">29.9 °C</p>
+                    <hr>
+                    <p id="currentDate">Tue, July 29</p>
+                </div>
+                <div id="bottomDiv">
+
+                    <h1 id="currentCityName">London, United Kingdoms</h1>
+                    <p id="currentCondition">Partially Cloudy</p>
+                    <div>
+                        <div id="currentTime">12:02</div>
+                        <div id="placeholder" class="iconCurrent"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="bandoriImgDiv"></div>
+        </div>
+        <div id="hourlyDiv"></div>
+        <div id="dailyDiv"></div>
+
+    </div>  
+
+
 </body>
 </html>
