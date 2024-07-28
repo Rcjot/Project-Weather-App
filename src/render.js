@@ -41,7 +41,7 @@ export const renderModule = (function(){
                 div.classList.remove('loading')
                 div.classList.add('error') 
             }else {
-                div.classList.add('error') 
+                div.classList.remove('error') 
                 div.classList.add('loading')
             };
         }
