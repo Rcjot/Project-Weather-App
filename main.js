@@ -680,7 +680,7 @@ eval("module.exports = __webpack_require__.p + \"6e58cc7dcb66f8b2afb5.svg\";\n\n
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"6c15c515fe25e148e3e5.svg\";\n\n//# sourceURL=webpack://my-webpack-template/./src/assetsSVG/sad.svg?");
+eval("module.exports = __webpack_require__.p + \"654489daa32281bcb3f2.svg\";\n\n//# sourceURL=webpack://my-webpack-template/./src/assetsSVG/sad.svg?");
 
 /***/ }),
 
