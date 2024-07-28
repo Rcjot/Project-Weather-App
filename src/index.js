@@ -6,14 +6,16 @@ import { setBandori } from './setBandori';
 async function fetchWeather(cityName) {
     try {
         renderModule.renderLoading();
-        let cityAPI = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=metric&key=9UV2RY33EZU7UCZT2LJCVCESJ&contentType=json`);
+        let cityAPI = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=metric&key=9UV2RY33EZU7UCZT2LJCVCESJ&contentType=json`, {mode: 'cors'});
         let city = await cityAPI.json();
+        renderModule.stopLoading();
         const currentWeather = {
             cityAddress: city.resolvedAddress,
             condition: city.days[0].conditions,
             icon: city.currentConditions.icon,
-            time: city.currentConditions.datetime,
-            temp: city.currentConditions.temp
+            date: city.days[0].datetime,
+            temp: city.currentConditions.temp,
+            offset: city.tzoffset,
     
         }
         const hourlyWeatherArr = city.days[0].hours;
@@ -23,8 +25,9 @@ async function fetchWeather(cityName) {
         renderModule.renderHourlyDiv(hourlyWeatherArr);
         renderModule.renderDailyDiv(dailyWeatherArr);
         renderTemperature.renderUnit();
-    } catch {
+    } catch(e) {
         renderModule.renderError();
+        console.log(e);
     }
 
 }
@@ -32,6 +35,12 @@ async function fetchWeather(cityName) {
 (function() {
     const searchBar = document.querySelector('#searchBar');
     const searchBtn = document.querySelector('#searchBtn');
+
+    searchBar.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            searchBtn.click();
+        }
+    })
 
     searchBtn.addEventListener('click',(event) => {
         if (searchBar.value === ''){
@@ -41,10 +50,9 @@ async function fetchWeather(cityName) {
         }
     });
 
-    // searchBtn.click();
+    searchBtn.click();
 })();
 
-setBandori.appendImage();
 
 const tempBtn = document.querySelector('#cb1-6');
 tempBtn.addEventListener('change', () => {

@@ -8,9 +8,7 @@ const imgs = importAll(require.context('./assetsSVG', false, /\.(png|jpe?g|svg)$
   
 export const setIconModule = (function(){
     function setIcon(img, icon) {
-        // img.src = imgs[`${icon}.svg`];
         img.src = imgs[`${icon}.svg`];
-
     }
 
     return {
