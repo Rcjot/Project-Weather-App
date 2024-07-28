@@ -244,7 +244,7 @@ header h1 {
     width: 150px;
 }
 .error{
-    background-image: url('./assetsSVG/sad.png');
+    background-image: url('./assetsSVG/loading.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 150px;
