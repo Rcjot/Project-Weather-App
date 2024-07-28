@@ -12,7 +12,10 @@ export const renderModule = (function(){
         const pCondition = document.querySelector('#currentCondition');
         const currentTime = document.querySelector('#currentTime'); 
         const iconHolder = document.querySelector('#iconHolder');   
-
+        const hourlyDivContainer = document.querySelector('#hourlyDiv');
+        const dailyDiv = document.querySelector('#dailyDiv');
+        hourlyDivContainer.innerHTML = '';
+        dailyDiv.innerHTML = '';
         pTemp.textContent = '';
         pDate.textContent = '';
         h1Name.textContent = '';
@@ -22,19 +25,35 @@ export const renderModule = (function(){
 
     }   
 
-    function renderLoading(){
+        
+    function renderError() {
+        renderLoading(true)
+    }
+
+    function renderLoading(bool = false){
         const divs = document.querySelectorAll('#display > div');
+        const hr = document.querySelector('hr');
+        hr.style.display = 'none';
         for (let div of divs) {
-            div.classList.add('loading');
+            if (bool) {
+                div.classList.remove('loading')
+                div.classList.add('error') 
+            }else {
+                div.classList.add('error') 
+                div.classList.add('loading')
+            };
         }
         clearCurrentDiv();
     }
 
     function stopLoading(){
         const divs = document.querySelectorAll('#display > div');
-        console.log(divs);
+        const hr = document.querySelector('hr');
+        hr.style.display = 'block';
+
         for (let div of divs) {
             div.classList.remove('loading');
+            div.classList.remove('error');
         } 
     }
 
@@ -131,11 +150,7 @@ export const renderModule = (function(){
         }
 
     }
-    
-    function renderError() {
-        const display = document.querySelector('#display');
-        display.textContent = 'no city found';
-    }
+
 
     return {
         renderLoading,

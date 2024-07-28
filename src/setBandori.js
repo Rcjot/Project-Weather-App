@@ -42,7 +42,6 @@ export const setBandori = (function(){
         }else if (icon.includes('thunder')){
             imgArr = nightrainImgs;
         }
-        console.log(imgArr);
 
         const keys = Object.keys(imgArr);
         const randomIndex = Math.floor(Math.random() * keys.length);
@@ -51,7 +50,6 @@ export const setBandori = (function(){
     }
     
     function appendImage(icon) {
-        console.log(icon);
         const bandoriDiv = document.querySelector('#bandoriImgDiv');
         bandoriDiv.innerHTML = '';
         const bandoriImage = new Image();

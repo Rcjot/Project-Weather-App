@@ -20,14 +20,12 @@ async function fetchWeather(cityName) {
         }
         const hourlyWeatherArr = city.days[0].hours;
         const dailyWeatherArr = city.days;
-        console.log(city);
         renderModule.renderCurrentDiv(currentWeather);
         renderModule.renderHourlyDiv(hourlyWeatherArr);
         renderModule.renderDailyDiv(dailyWeatherArr);
         renderTemperature.renderUnit();
     } catch(e) {
         renderModule.renderError();
-        console.log(e);
     }
 
 }

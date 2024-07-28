@@ -234,6 +234,7 @@ header h1 {
 
 
 
+
 .icon {
     height: 50px;
     width: 80px;
@@ -242,8 +243,12 @@ header h1 {
     height: 80px;
     width: 150px;
 }
-
-
+.error{
+    background-image: url(assetsSVG/sad.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+}
 .loading {
     background-image: url(assetsSVG/loading.svg);
     background-repeat: no-repeat;
