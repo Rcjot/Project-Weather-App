@@ -33,7 +33,9 @@ export const renderModule = (function(){
     function renderLoading(bool = false){
         const divs = document.querySelectorAll('#display > div');
         const hr = document.querySelector('hr');
+        const bandori = document.querySelector('#bandoriImgDiv');
         hr.style.display = 'none';
+        bandori.style.display = 'none';
         for (let div of divs) {
             if (bool) {
                 div.classList.remove('loading')
@@ -49,7 +51,9 @@ export const renderModule = (function(){
     function stopLoading(){
         const divs = document.querySelectorAll('#display > div');
         const hr = document.querySelector('hr');
+        const bandori = document.querySelector('#bandoriImgDiv');
         hr.style.display = 'block';
+        bandori.style.display = 'flex';
 
         for (let div of divs) {
             div.classList.remove('loading');
