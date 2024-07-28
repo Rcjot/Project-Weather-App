@@ -11,4 +11,4 @@ bandori img srcs: https://bandori.party/cards/
 
 weather icons: https://github.com/visualcrossing/WeatherIcons
 
-live preview: 
+live preview: https://rcjot.github.io/Project-Weather-App/
