@@ -4,6 +4,7 @@ import { renderTemperature } from './temperature';
 import { setBandori } from './setBandori';
 
 async function fetchWeather(cityName) {
+    
     try {
         renderModule.renderLoading();
         let cityAPI = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=metric&key=9UV2RY33EZU7UCZT2LJCVCESJ&contentType=json`, {mode: 'cors'});
