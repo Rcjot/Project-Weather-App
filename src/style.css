@@ -244,13 +244,13 @@ header h1 {
     width: 150px;
 }
 .error{
-    background-image: url(assetsSVG/sad.svg);
+    background-image: url('./assetsSVG/sad.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 150px;
 }
 .loading {
-    background-image: url(assetsSVG/loading.svg);
+    background-image: url('./assetsSVG/loading.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
